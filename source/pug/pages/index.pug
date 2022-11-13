@@ -1,18 +1,16 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
-  - const wrapperMods = ""
-  - const hasHeader = true
-  - const headerMods = ""
-  - const hasFooter = true
-  - const footerMods = ""
+  - const title = "Феникс - студия фитнеса и растяжки" //- на страницах кроме главной используйте О нас — ProjectName
   - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
 
 block main
-  main
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
-    +intro()
-
+  +header()(data-fix-block)
+  div(data-scroll-container)
+    div.scroll-section(data-scroll-section)
+      main
+        +intro()
+      +footer()
+  .cursor.is-hidden(data-cursor)
+    span
 block modals

@@ -1,0 +1,22 @@
+.blob-link {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  > * {
+    z-index: 1;
+    position: relative;
+  }
+
+  &__blob {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform $trans-default;
+    background-color: $color-tangerine;
+    transform: scale(0);
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}

@@ -1,10 +1,13 @@
 mixin intro()
   .intro
-    //- вставлять блоки во внешний контейнер неверно
-    //- все блоки содержат в себе container без доп класса tutorial__wrapper
     .container
-      p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
-
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")
+      .intro__wrapper
+        .intro__content
+          h1.intro__title.title.fibo(data-simple-animate)
+            span.title__text.title__text--gradient Феникс
+            =" "
+            span.title-text студия фитнеса и&nbsp;растяжки
+          button.intro__button.btn.blob-link.fibo(data-simple-animate)
+            span Записаться на пробное занятие
+        .intro__logo.fibo(data-simple-animate)
+          img(src="img/svg/logo-text.svg", width="740", height="640", alt="Логотип")

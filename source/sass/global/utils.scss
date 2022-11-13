@@ -69,3 +69,36 @@
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
+
+.fio {
+  opacity: 0;
+  transition: opacity $trans-2000;
+
+  &.is-shown {
+    opacity: 1;
+  }
+}
+
+.fibo {
+  display: block;
+  position: relative;
+  transform: translateY(size(50px));
+  opacity: 0;
+  transition: transform $trans-1000, opacity $trans-1500;
+
+  &.is-shown {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fib {
+  display: block;
+  position: relative;
+  transform: translateY(size(50px));
+  transition: transform $trans-1000;
+
+  &.is-shown {
+    transform: translateY(0);
+  }
+}

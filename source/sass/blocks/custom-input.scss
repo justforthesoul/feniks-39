@@ -39,7 +39,7 @@
     right: 0;
     bottom: -5px;
 
-    color: $color-torch-red;
+    color: red;
 
     opacity: 0;
 
@@ -48,11 +48,11 @@
 
   &.is-invalid {
     input {
-      border: 2px solid $color-torch-red;
+      border: 2px solid red;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba($color-torch-red, 0.5);
+        border: 2px solid rgba(red, 0.5);
       }
     }
 

@@ -2,6 +2,12 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {initCustomSelect} from './modules/form/init-custom-select';
 import {initFormValidate} from './modules/form/init-form-validate';
+import {initLocomotiveScroll} from './modules/init-locomotive-scroll';
+import {initScrollTriggerLs} from './modules/scroll-trigger';
+import {initScrollTo} from './modules/scroll-to';
+import {BlobLink} from './modules/blob-link';
+import {CustomCursor} from './modules/custom-cursor';
+import {initStartAnimation} from './modules/init-start-animation';
 
 // ---------------------------------
 
@@ -12,6 +18,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   iosVhFix();
 
+
+  initLocomotiveScroll();
+  if (window.ls) {
+    window.ls.stop();
+    initScrollTriggerLs();
+    initScrollTo();
+    initStartAnimation();
+  }
+
   // Modules
   // ---------------------------------
 
@@ -21,6 +36,12 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     initCustomSelect();
     initFormValidate();
+
+    const customCursor = new CustomCursor();
+    customCursor.init();
+
+    const blobLink = new BlobLink();
+    blobLink.init();
   });
 });
 

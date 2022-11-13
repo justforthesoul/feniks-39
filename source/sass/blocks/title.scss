@@ -1,0 +1,15 @@
+.title {
+  font-size: size(54px);
+  line-height: 110%;
+  font-weight: 300;
+  margin: 0;
+
+  &__text--gradient {
+    font-weight: 400;
+    background: $text-gradient;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+  }
+}

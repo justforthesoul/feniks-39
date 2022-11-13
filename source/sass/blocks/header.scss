@@ -1,13 +1,86 @@
 .header {
-  padding: 28px 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
 
-  background-color: $color-neon-blue;
+  width: 100%;
+  padding: 10px 0;
 
-  .container {
+  background: $base-gradient;
+  transform: translateY(-100%);
+  opacity: 0;
+
+  transition: transform $trans-1000, opacity $trans-1500;
+
+  &.is-shown {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__wrapper {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: size(40px);
+    height: size(40px);
+
+    background-color: $color-default-white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $color-seal-brown;
+
+    transition: opacity $trans-600;
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    img {
+      width: 87%;
+      height: 87%;
+      margin-top: size(5px);
+
+      object-fit: contain;
+    }
+  }
+
+  &__toggle {
+    display: inline-flex;
+    padding: size(2px) size(10px);
+
+    font-weight: 300;
+    font-size: size(16px);
+    line-height: 110%;
     color: $color-default-white;
+    text-transform: uppercase;
+
+    background: $color-transparent;
+    border: 0.5px solid $color-default-white;
+    border-radius: size(4px);
+    cursor: pointer;
+
+    transition: color $trans-600, opacity $trans-600;
+
+    @include hover {
+      color: $color-scarlet;
+    }
+  }
+
+  &__phone-link {
+    font-weight: 300;
+    font-size: size(16px);
+    line-height: 110%;
+    color: $color-default-white;
+
+    transition: opacity $trans-600;
+
+    @include hover {
+      opacity: 0.8;
+    }
   }
 }
